@@ -25,45 +25,38 @@ else Console.Write("Наибольшая цифра в вашем числе - "
 
 //3 - самост 1я
 /*
-int RemoveMiddleDigit (int num)
+int RemoveMiddleDigit () // int num в скобках писать не надо для рандомного примера
 {
+    int num = new Random().Next(100,1000); // тогда перенесем сюда эту рандомную ф-ю
+    Console.WriteLine(num); // добавляем, чтобы в консоль вывести число, которое мы сгенерили
     int FirstDigit = num / 100;
     int LastDigit = num % 10;
     int result = FirstDigit * 10 + LastDigit;
     return result;
 }
-int num1 = new Random().Next(100,1000);
-int output = RemoveMiddleDigit (num1);
-Console.WriteLine(num1 + " -> " + output);
+Console.WriteLine(" -> " + RemoveMiddleDigit ()); // поскольку мы в ф-ии писали случайное число
 */
 
 //4 - самост 2
 /*
-int Kratno1e2mu (int a, int b)
+string Kratno1e2mu (int a, int b) // для разнообразия заменили инт на стринг
 {
     if(a % b == 0)
     {
-        return 1;
+        return "кратно";
     }
     else
     {
-        return 2;
+        return "не кратно, остаток " + (a%b);
     }
 }
 Console.Write("Введите 1е целое число: ");
 int num1 = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите 2е целое число, меньше первого: ");
 int num2 = Convert.ToInt32(Console.ReadLine());
-int result = Kratno1e2mu (num1, num2);
-if (result == 1)
-{
-    Console.WriteLine("кратно");
-}
-else
-{
-    Console.WriteLine("не кратно, остаток равен " + num1%num2);
-}
+Console.WriteLine(Kratno1e2mu (num1, num2));
 */
+
 
 //5 - самост 3
 /* 
@@ -80,28 +73,15 @@ else
 }
 */
 
-/* та же задача через функцию 
-int Kratnost (int num)
+// та же задача через функцию   // буллеву!!!
+bool Kratnost (int a)
 {
-    if (num % 7 == 0 && num % 23 == 0)
-    {
-        return 1;
-    }
-    else
-    {
-        return 2;
-    }
+    if (a % 7 == 0 && a % 23 == 0) return true;
+    else return false;
 }
 int num;
 Console.Write("Введите целое число: ");
 num = Convert.ToInt32(Console.ReadLine());
-int result = Kratnost(num);
-if (result == 1)
-    {
-        Console.WriteLine("Ваше число кратно 7 и 23м");
-    }
-    else
-    {
-        Console.WriteLine("Ваше число НЕ кратно 7 и 23м");
-    }
-*/
+bool result = Kratnost(num);
+if (result == true) Console.WriteLine("Ваше число кратно 7 и 23м");
+else Console.WriteLine("Ваше число НЕ кратно 7 и 23м");
