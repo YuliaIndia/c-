@@ -15,10 +15,11 @@ if ((Math.Abs(num) <100) | (Math.Abs(num) >999)) Console.Write("Ваше чис�
 else Console.Write(" -> средняя цифра " + CutMiddleNumber(num));
 */
 
+
+
 /* Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, 
-что третьей цифры нет.  645 -> 5,   78 -> третьей цифры нет,    32679 -> 6
-*/
-//Решение
+что третьей цифры нет.  645 -> 5,   78 -> третьей цифры нет,    32679 -> 6 */
+
 /* //гуглила и тестила подсчет символов в числе
 int a=123456;
 int digitCount = (int)Math.Log10(a) + 1;
@@ -34,8 +35,7 @@ string B = A.SubString(startIndex, length);
 //int b = Convert.ToInt32(B);
 Console.WriteLine(B); 
 */
-
-// возвращаемся к тесту деления исходного числа в зависимости от числа знаков
+/* // возвращаемся к тесту деления исходного числа в зависимости от числа знаков
 int a=1284567;
 int digitCount = (int)Math.Log10(a) + 1;
 double razrLishnie = digitCount - 3;
@@ -43,9 +43,8 @@ double Base = 10;
 double delitel = Math.Pow(Base, razrLishnie);
 int Delitel = Convert.ToInt32(delitel);
 int LevSimv = a / Delitel;
-Console.WriteLine(LevSimv % 10);
-
-/* из гугла 
+Console.WriteLine(LevSimv % 10); */
+/* из гугла про вырезание SubString
 String value = "This is a string.";
 int startIndex = 5;
 int length = 2;
@@ -53,16 +52,19 @@ String substring = value.Substring(startIndex, length);
 Console.WriteLine(substring);
 */
 
-/*
+/* //Решение
  string ThirdDigit (int abcd)
 {
     if (Math.Abs(abcd)<100) return "третьей цифры нет";
     else 
     {
-    int digitCount = (int)Math.Log10(abcd) + 1;
-    int bcd = Math.Abs(abcd) % 1000;
-    int b = bcd % 10;
-    return $"третья цифра {b}";
+    int digitCount = (int)Math.Log10(Math.Abs(abcd)) + 1;
+    double razrLishnie = digitCount - 3;
+    double Base = 10;
+    double delitel = Math.Pow(Base, razrLishnie);
+    int Delitel = Convert.ToInt32(delitel);
+    int LevSimv = Math.Abs(abcd) / Delitel;
+    return $"третья цифра {LevSimv % 10}";
     }
 }
 int num;
@@ -71,9 +73,19 @@ num = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine(ThirdDigit(num));
 */
 
-/* Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
-6 -> да
-7 -> да
-1 -> нет
+
+
+/* Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, 
+и проверяет, является ли этот день выходным. 6 -> да, 7 -> да, 1 -> нет */
+
+/* //Решение
+string Weekend (int number)
+{
+    if ( (number == 6) || (number == 7)) return "Weekend";
+    else return "Working day";
+}
+int num;
+Console.Write("Введите число от 1 до 7, где 1 - пн, 7 - вс: ");
+num = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(Weekend(num));
 */
-//Решение
