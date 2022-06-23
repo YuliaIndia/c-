@@ -68,4 +68,3 @@ yb = Convert.ToDouble(Console.ReadLine());
 Console.WriteLine("расстояние между вашими точками равно " + FindLength(xa, ya, xb, yb));
 */
 
-Console.

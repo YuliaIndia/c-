@@ -14,7 +14,7 @@ int[] CreateRandomArray (int size, int min, int max)
 }
 void ShowArray(int[] array)
 {
-    for(int i = 0; i<array.Length; i++)
+    for(int i = 0; i<array.Length; i++, j--)
     {
         Console.Write(array[i] + " ");
     }
