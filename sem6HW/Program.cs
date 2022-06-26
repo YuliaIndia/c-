@@ -35,4 +35,33 @@ Console.WriteLine("You have " + CountPositiveNumbers(myArray) + " positive numbe
 
 // Задача 45: Напишите программу, которая будет создавать 
 // копию заданного массива с помощью поэлементного копирования.
-
+int[] CreateRandomArray (int size, int min, int max)
+{
+    int[] newArray = new int[size];
+    for (int i = 0; i<size; i++)
+    {
+        newArray[i]=new Random().Next(min, max+1);
+        Console.Write(newArray[i] + " ");
+    }
+    Console.WriteLine();
+    return newArray;
+}
+int[] CopyArray (int[] array)
+{
+    int[] CopyArray = new int[array.Length];
+    for (int i = 0; i < array.Length; i++)
+    {
+        CopyArray[i] = array[i];
+    }
+    return CopyArray;
+}
+int siize, miin, maax;
+Console.Write("Enter the size for your random array: ");
+siize = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter the minimum number for your random array: ");
+miin = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter the maximum number for your random array: ");
+maax = Convert.ToInt32(Console.ReadLine());
+int[] myArray = CreateRandomArray(siize, miin, maax);
+int[] myArrayCopy = CopyArray(myArray);
+ShowArray(myArrayCopy);

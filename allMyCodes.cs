@@ -1,4 +1,4 @@
-void Square (int n)
+void Square (int n) // вывести квадраты чисел от 1 до заданного
 {
     int index = 1;
     while (index <= Math.Abs(n))
@@ -8,7 +8,7 @@ void Square (int n)
     }
 }
 
-int FindQuart (int x, int y)
+int FindQuart (int x, int y)    // в какую четверть попадает точка на плоскости
 {
     if (x>0 && y>0) return 1;
     if (x<0 && y>0) return 2;
@@ -32,7 +32,7 @@ string ThirdDigit (int abcd)        // выводит третью цифру з
     }
 }
 
-void Kub (int n)
+void Kub (int n)        // вывести кубы чисел от 1 до заданного 
 {
     int index = 1;
     while (index <= Math.Abs(n))
@@ -42,7 +42,7 @@ void Kub (int n)
     }
 }
 
-void Palindrom (int abcde)
+void Palindrom (int abcde)  // проверка, является ли 5-значное число палиндромом
 {
     int a, b, c, d, e;
     e = abcde % 10;
@@ -60,7 +60,8 @@ double FindLength(double xA, double yA, double xB, double yB, double zA, double 
    return length;
 }
 
-int size = 8;       //выводит массив из 8 элементов, заполненный нулями и единицами в случайном порядке
+//выводит массив из 8 элементов, заполненный нулями и единицами в случайном порядке
+int size = 8;       
 int[] array = new int [size];
 for (int i = 0; i<size; i++) // сгенерир массив
 {
@@ -130,7 +131,7 @@ int[] CreateRandomArray (int size, int min, int max)
     return newArray;
 }
 
-void ShowArray(int[] array)
+void ShowArray(int[] array)     // вывести массив
 {
     for(int i = 0; i<array.Length; i++)
     {
@@ -138,7 +139,7 @@ void ShowArray(int[] array)
     }
 }
 
-int FindPositiveSum(int[] array)
+int FindPositiveSum(int[] array)    // найти сумму положит элементов массива
 {
     int sum = 0;
     for(int i = 0; i<array.Length; i++)
@@ -148,7 +149,7 @@ int FindPositiveSum(int[] array)
     return sum;
 }
 
-int FindNegativeSum(int[] array)
+int FindNegativeSum(int[] array)    // найти сумму отриц элементов массива
 {
     int sum = 0;
     for(int i = 0; i<array.Length; i++)
