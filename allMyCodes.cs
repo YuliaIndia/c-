@@ -294,6 +294,44 @@ string BinaryNumber(int num)        //десятичное число в дво�
     return result;
 }
 
+int[,] CreateRandomTwoDimArray (int a, int b, int min, int max)     // создать двумерный int массив
+{
+    int[,] newMatrix = new int[a,b]; // выделение памяти
+    for (int i = 0; i < a; i++)     // по строкам
+        for (int j = 0; j < b; j++) // по столбцам
+            newMatrix[i,j] = new Random().Next(min,max+1);
+    return newMatrix;
+}
 
+void ShowTwoDimArray (int[,] array)                                 // вывести двумерный int массив
+{
+    for (int i = 0; i < array.GetLength(0); i++)     // по строкам
+    {   for (int j = 0; j < array.GetLength(1); j++) // по столбцам
+            { Console.Write(array[i,j] + " ");}
+        Console.WriteLine();
+    }
+}
 
+double[,] GenerateRandomRealTwoDimArray (int m, int n, double min, double max)     // создать двумерный double массив
+{
+    double[,] array = new double[m,n];
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            array[i,j] = new Random().NextDouble()* (max - min) + min;
+        }
+    }
+    return array;
+}
+
+void ShowTwoDimArray (double[,] array)                                 // вывести двумерный double массив
+{
+    for (int i = 0; i < array.GetLength(0); i++)     // по строкам
+    {    
+        for (int j = 0; j < array.GetLength(1); j++) // по столбцам
+        {    Console.Write(array[i,j] + " ");}
+        Console.WriteLine();
+    }    
+}
 
