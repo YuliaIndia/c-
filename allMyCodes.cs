@@ -335,3 +335,11 @@ void ShowTwoDimArray (double[,] array)                                 // выв
     }    
 }
 
+string[] ArrayToLower (string[] array) // смена регистра массива - в мал буквы
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = array[i].ToLower();
+    }
+    return array;
+}
